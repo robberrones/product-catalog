@@ -20,11 +20,45 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             ProductListComponent = (function () {
                 function ProductListComponent() {
+                    this.pageTitle = "Product List";
+                    this.imageWidth = 50;
+                    this.imageMargin = 2;
+                    this.showImage = false;
+                    this.listFilter = "cart";
+                    this.products = [
+                        {
+                            "productId": 1,
+                            "productName": "Leaf Rake",
+                            "productCode": "GDN-0011",
+                            "releaseDate": "March 19, 2016",
+                            "description": "Leaf rake with 48-inch wooden handle.",
+                            "price": 19.95,
+                            "starRating": 3.2,
+                            "imageUrl": "http://placekitten.com/200/300"
+                        },
+                        {
+                            "productId": 2,
+                            "productName": "Garden Cart",
+                            "productCode": "GDN-0023",
+                            "releaseDate": "March 18, 2016",
+                            "description": "15 gallon capacity rolling garden cart",
+                            "price": 32.99,
+                            "starRating": 4.2,
+                            "imageUrl": "http://placekitten.com/100/166"
+                        }];
                 }
+                ProductListComponent.prototype.toggleImage = function () {
+                    this.showImage = !this.showImage;
+                };
+                ;
+                ProductListComponent.prototype.ngOnInit = function () {
+                    console.log("In OnInit");
+                };
                 ProductListComponent = __decorate([
                     core_1.Component({
                         selector: 'pc-products',
-                        templateUrl: 'app/products/product-list.component.html'
+                        templateUrl: 'app/products/product-list.component.html',
+                        styleUrls: ["app/products/product-list.component.css"]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ProductListComponent);
