@@ -3,10 +3,14 @@ import { Component, OnInit } from 'angular2/core';
 //custom interface 'IProduct'
 import { IProduct } from './product';
 
+//custom interface 'IProduct'
+import { ProductFilterPipe } from './product-filter.pipe';
+
 @Component({
 	selector: 'pc-products',
 	templateUrl: 'app/products/product-list.component.html',
-	styleUrls: ["app/products/product-list.component.css"]
+	styleUrls: ["app/products/product-list.component.css"],
+    pipes: [ProductFilterPipe ]
 })
 export class ProductListComponent implements OnInit {
 	pageTitle: string = "Product List";
